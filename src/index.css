@@ -1,0 +1,60 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Space+Grotesk:wght@300;500;700&display=swap');
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk", sans-serif;
+  
+  --color-brand-orange: #B13BFF;
+  --color-brand-amber: #E0A6FF;
+  --color-bg-dark: #0A0A0A;
+  --color-surface: #121212;
+  --color-surface-bright: #1A1A1A;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-bg-dark text-white font-sans antialiased selection:bg-brand-orange selection:text-white;
+  }
+}
+
+.glass-morphism {
+  @apply bg-white/5 backdrop-blur-md border border-white/10;
+  -webkit-backdrop-filter: blur(12px);
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+.text-glow {
+  text-shadow: 0 0 20px rgba(177, 59, 255, 0.4);
+}
+
+.purple-gradient-text {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-brand-orange to-brand-amber;
+}
+
+.writing-vertical {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0A0A0A;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #222;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #333;
+}
